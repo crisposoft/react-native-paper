@@ -35,6 +35,10 @@ export type Props = $RemoveChildren<typeof TouchableRipple> & {
    * testID to be used on tests.
    */
   testID?: string;
+  /**
+   * custom icon.
+   */
+  icon?: (props: { size: number; color: string }) => JSX.Element;
 };
 
 // From https://material.io/design/motion/speed.html#duration
@@ -62,6 +66,7 @@ const CheckboxAndroid = ({
   disabled,
   onPress,
   testID,
+  icon: customIcon,
   ...rest
 }: Props) => {
   const { current: scaleAnim } = React.useRef<Animated.Value>(
@@ -146,13 +151,15 @@ const CheckboxAndroid = ({
       testID={testID}
     >
       <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-        <MaterialCommunityIcon
-          allowFontScaling={false}
-          name={icon}
-          size={24}
-          color={checkboxColor}
-          direction="ltr"
-        />
+        {customIcon?.({ size: 24, color: checkedColor }) || (
+          <MaterialCommunityIcon
+            allowFontScaling={false}
+            name={icon}
+            size={24}
+            color={checkboxColor}
+            direction="ltr"
+          />
+        )}
         <View style={[StyleSheet.absoluteFill, styles.fillContainer]}>
           <Animated.View
             style={[

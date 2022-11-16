@@ -57,6 +57,10 @@ export type Props = {
    */
   testID?: string;
   /**
+   * custom icon.
+   */
+  icon?: (props: { size: number; color: string }) => JSX.Element;
+  /**
    * Checkbox control position.
    */
   position?: 'leading' | 'trailing';
@@ -94,12 +98,13 @@ const CheckboxItem = ({
   labelStyle,
   theme,
   testID,
+  icon,
   mode,
   position = 'trailing',
   disabled,
   ...props
 }: Props) => {
-  const checkboxProps = { ...props, status, theme, disabled };
+  const checkboxProps = { ...props, status, theme, disabled, icon };
   const isLeading = position === 'leading';
   let checkbox;
 

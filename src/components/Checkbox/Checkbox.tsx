@@ -33,6 +33,10 @@ export type Props = {
    * testID to be used on tests.
    */
   testID?: string;
+  /**
+   * custom icon.
+   */
+  icon?: (props: { size: number; color: string }) => JSX.Element;
 };
 
 /**
