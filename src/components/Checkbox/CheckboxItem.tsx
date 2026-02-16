@@ -15,11 +15,11 @@ import CheckboxAndroid from './CheckboxAndroid';
 import CheckboxIOS from './CheckboxIOS';
 import { useInternalTheme } from '../../core/theming';
 import type { ThemeProp, MD3TypescaleKey } from '../../types';
+import { IconSource } from '../Icon';
 import TouchableRipple, {
   Props as TouchableRippleProps,
 } from '../TouchableRipple/TouchableRipple';
 import Text from '../Typography/Text';
-import { IconSource } from '../Icon';
 
 export type Props = {
   /**

@@ -4,8 +4,8 @@ import { GestureResponderEvent, Platform } from 'react-native';
 import CheckboxAndroid from './CheckboxAndroid';
 import CheckboxIOS from './CheckboxIOS';
 import { useInternalTheme } from '../../core/theming';
-import type { IconSource } from '../Icon';
 import type { ThemeProp } from '../../types';
+import type { IconSource } from '../Icon';
 
 export type Props = {
   /**
