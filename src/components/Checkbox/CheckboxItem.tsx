@@ -19,6 +19,7 @@ import TouchableRipple, {
   Props as TouchableRippleProps,
 } from '../TouchableRipple/TouchableRipple';
 import Text from '../Typography/Text';
+import { IconSource } from '../Icon';
 
 export type Props = {
   /**
@@ -102,7 +103,7 @@ export type Props = {
   /**
    * custom icon.
    */
-  icon?: (props: { size: number; color: string }) => JSX.Element;
+  icon?: IconSource;
   /**
    * Checkbox control position.
    */
