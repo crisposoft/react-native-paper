@@ -6,6 +6,7 @@ import { useInternalTheme } from '../../core/theming';
 import type { $RemoveChildren, ThemeProp } from '../../types';
 import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
+import { IconSource } from '../Icon';
 
 export type Props = $RemoveChildren<typeof TouchableRipple> & {
   /**
@@ -35,7 +36,7 @@ export type Props = $RemoveChildren<typeof TouchableRipple> & {
   /**
    * custom icon.
    */
-  icon?: (props: { size: number; color: string }) => JSX.Element;
+  icon?: IconSource;
 };
 
 /**
