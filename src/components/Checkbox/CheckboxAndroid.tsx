@@ -9,9 +9,9 @@ import {
 import { getAndroidSelectionControlColor } from './utils';
 import { useInternalTheme } from '../../core/theming';
 import type { $RemoveChildren, ThemeProp } from '../../types';
+import Icon, { IconSource } from '../Icon';
 import MaterialCommunityIcon from '../MaterialCommunityIcon';
 import TouchableRipple from '../TouchableRipple/TouchableRipple';
-import { IconSource } from '../Icon';
 
 export type Props = $RemoveChildren<typeof TouchableRipple> & {
   /**
@@ -140,7 +140,9 @@ const CheckboxAndroid = ({
       theme={theme}
     >
       <Animated.View style={{ transform: [{ scale: scaleAnim }] }}>
-        {customIcon?.({ size: 24, color: selectionControlColor }) || (
+        {customIcon ? (
+          <Icon source={customIcon} size={24} color={selectionControlColor} />
+        ) : (
           <MaterialCommunityIcon
             allowFontScaling={false}
             name={icon}
