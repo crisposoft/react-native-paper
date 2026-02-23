@@ -66,7 +66,7 @@ const CheckboxIOS = ({
   });
 
   const icon = indeterminate ? 'minus' : 'check';
-  const opacity = indeterminate || checked ? 1 : 0;
+  const opacity = customIcon ? 1 : indeterminate || checked ? 1 : 0;
 
   return (
     <TouchableRipple
